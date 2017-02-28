@@ -46,5 +46,5 @@ def log_warning(message):
 
 
 def log_info(message):
-    log(Fore.BLUE + str(message))
+    log(Fore.WHITE + str(message))
     log(Fore.RED)
