@@ -1,8 +1,6 @@
 import unittest
 
-import schemas
-from concourse import common
-from concourse import testutil
+from concourse_common import schemas, testutil, common
 
 
 class TestCommon(unittest.TestCase):
@@ -44,7 +42,7 @@ class TestCommon(unittest.TestCase):
         payload = common.load_payload()
 
         try:
-            common.validate_payload(payload, schemas.checkSchema)
+            common.validate_payload(payload, schemas.testSchema)
         except TypeError:
             self.fail("Valid JSON detected as invalid")
 
@@ -53,7 +51,7 @@ class TestCommon(unittest.TestCase):
         payload = common.load_payload()
 
         try:
-            common.validate_payload(payload, schemas.checkSchema)
+            common.validate_payload(payload, schemas.testSchema)
         except TypeError:
             self.fail("Valid JSON detected as invalid")
 
@@ -62,7 +60,7 @@ class TestCommon(unittest.TestCase):
         payload = common.load_payload()
 
         with self.assertRaises(TypeError):
-            common.validate_payload(payload, schemas.checkSchema)
+            common.validate_payload(payload, schemas.testSchema)
 
     def test_log_on_stderr(self):
         io = testutil.mock_stderr()
