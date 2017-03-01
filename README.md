@@ -49,6 +49,7 @@ This object can then be used with `read_from_io(StringIO)` to read all lines fro
 
 `put_stdin(content)`: Mocks stdin with a StringIO object and writes string content to the object.
 
+`validate_filepath(filepath)`: Validates that file at filepath exists
 
 ## Contributing
 To create a new version of this package you need to create a new tag with a higher version than the latest tagged version.
@@ -60,3 +61,5 @@ git push --tags
 ````
 
 or create a new tag on GitHub
+
+Note: also bump the version in setup.py before tagging
