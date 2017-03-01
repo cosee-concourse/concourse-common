@@ -32,6 +32,15 @@ def validate_json(input, schema):
         raise TypeError
 
 
+def validate_path(file_path):
+    try:
+        file_stream = open(file_path, 'r')
+        file_stream.close()
+        return True
+    except IOError:
+        return False
+
+
 def log(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 
