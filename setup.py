@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='concourse_common',
-      version='0.3.0',
+      version='0.3.1',
       description='Common utitilies for concourse resources',
       url='https://github.com/cosee-concourse/concourse-common.git',
       author='cosee',

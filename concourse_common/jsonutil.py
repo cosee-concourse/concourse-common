@@ -68,13 +68,19 @@ def get_version_output(version, version_key_name):
         return json.dumps({"version": {version_key_name: version}})
 
 
-def contains_params_key(payload,key_name):
+def contains_params_key(payload, key_name):
     return key_name in payload['params']
 
 
-def get_source_value(payload,key):
-    return payload['source'][key]
+def get_source_value(payload, key):
+    try:
+        return payload['source'][key]
+    except KeyError:
+        return None
 
 
-def get_params_value(payload,key):
-    return payload['params'][key]
+def get_params_value(payload, key):
+    try:
+        return payload['params'][key]
+    except KeyError:
+        return None

@@ -112,3 +112,11 @@ class TestJsonUtil(unittest.TestCase):
     def test_get_params_value(self):
         output = jsonutil.get_params_value(self.test_json_payload_with_params, 'some_parameter')
         self.assertEqual(output, 'value')
+
+    def test_get_source_value_wrong_key(self):
+        output = jsonutil.get_source_value(self.test_json_payload, 'some_other_key')
+        self.assertEqual(output, None)
+
+    def test_get_params_value_wrong_key(self):
+        output = jsonutil.get_params_value(self.test_json_payload_with_params, 'some_other_parameter')
+        self.assertEqual(output, None)
