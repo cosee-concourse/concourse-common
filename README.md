@@ -29,6 +29,11 @@ git+https://github.com/cosee-concourse/concourse-common.git
 
 #### common: methods necessary for every concourse resource
 
+`check_system_argument_number`: Checks the number of system arguments the python module gets.
+Returns true if the number of arguments is two else it returns false.
+
+`join_paths(*paths)`: Wrapper method for os.path.join
+
 `log(*args, **kwargs)`: Prints to stderr to create log output in concourse
  
 The other log methods create colored log output using ANSI Escape codes. 
@@ -39,6 +44,8 @@ Defaults back to red after the warning oder info log messages so that pythons ex
 `log_warning`: Yellow output.
  
 `log_info`: White output.
+
+`validate_filepath(filepath)`: Validates that file at filepath exists
  
 #### ioutil: io utility methods 
 
@@ -97,8 +104,6 @@ This object can then be used with `read_from_io(StringIO)` to read all lines fro
 `read_from_io(io)`: Reads all lines from a StringIO object from the beginning and strips the new line character from it.
 
 `put_stdin(content)`: Mocks stdin with a StringIO object and writes string content to the object.
-
-`validate_filepath(filepath)`: Validates that file at filepath exists
 
 ## Contributing
 To create a new version of this package you need to create a new tag with a higher version than the latest tagged version.
