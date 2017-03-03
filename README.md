@@ -78,9 +78,9 @@ as name for the version key.
 
 `contains_params_key(payload,key_name)`: Checks if parameter key is in concouse payload.
 
-`get_source_value(payload,key)`: Get value for key in source dictionary of json payload.
+`get_source_value(payload,key)`: Get value for key in source dictionary of json payload. Returns None if key does not exist.
 
-`get_params_value(payload,key)`: Get value for key in params dictionary of json payload.
+`get_params_value(payload,key)`: Get value for key in params dictionary of json payload. Returns None if key does not exist.
 
 #### matcher: version matcher
 
