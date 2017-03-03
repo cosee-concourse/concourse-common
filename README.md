@@ -53,7 +53,19 @@ Prints validation errors to stderr
 
 `load_and_validate_payload(schemas, request)`: Calls `load_payload` and `validate_payload(payload,schema)`.
 Chooses correct schema from the schams module based on the request. Request is a enum contained in request module 
-(CHECK, IN, OUT). Schemas in schemas module need to be named check_schema, in_schema and out_schema. 
+(CHECK, IN, OUT). Schemas in schemas module need to be named check_schema, in_schema and out_schema.
+
+Returns two values: 
+	
+- validity of payload as boolean
+
+- payload as dictionary
+	
+Example usage:
+``` 
+valid, payload = load_and_validate_payload(schemas, Request.CHECK)
+```
+Validates payload with check_schema in schemas
 
 `get_version(payload, version_key_name)`: For a payload and the name of the version key, returns the version and `None` 
 if the key does not exist.
