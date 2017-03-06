@@ -1,9 +1,6 @@
-import json
 import os
 import sys
-import tempfile
 
-from jsonschema import Draft4Validator
 from colorama import Fore
 
 
